@@ -1,0 +1,337 @@
+/* Estilos principais do admin */
+.wpsgl-dashboard,
+.wpsgl-reports,
+.wpsgl-products,
+.wpsgl-categories,
+.wpsgl-stores {
+    padding: 20px;
+    max-width: 1400px;
+}
+
+/* Cards */
+.wpsgl-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.wpsgl-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.wpsgl-card-primary {
+    border-left: 4px solid #0073aa;
+}
+
+.wpsgl-card-full {
+    grid-column: 1 / -1;
+}
+
+.wpsgl-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #23282d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.wpsgl-card-content {
+    font-size: 14px;
+}
+
+/* Estatísticas */
+.wpsgl-stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.wpsgl-stat-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.wpsgl-stat-value {
+    font-weight: 600;
+    color: #0073aa;
+}
+
+/* Lista de compras do dia */
+.wpsgl-today-list {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    color: #666;
+}
+
+.wpsgl-today-list li {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+/* Cards de estatísticas */
+.wpsgl-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.wpsgl-stat-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.wpsgl-stat-card h4 {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.wpsgl-stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0073aa;
+}
+
+/* Filtros */
+.wpsgl-filters {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.wpsgl-filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.wpsgl-filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #23282d;
+}
+
+.wpsgl-filter-group input,
+.wpsgl-filter-group select {
+    width: 100%;
+    max-width: 100%;
+}
+
+.wpsgl-filter-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Tabelas */
+.wpsgl-purchases-table {
+    margin-top: 25px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.wpsgl-purchases-table table {
+    margin: 0;
+    border: none;
+}
+
+.wpsgl-purchases-table th {
+    font-weight: 600;
+    background: #f8f9fa;
+}
+
+/* Formulários */
+.wpsgl-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.wpsgl-form-group {
+    margin-bottom: 20px;
+}
+
+.wpsgl-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #23282d;
+}
+
+.wpsgl-form-group input,
+.wpsgl-form-group select,
+.wpsgl-form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.wpsgl-form-group input:focus,
+.wpsgl-form-group select:focus,
+.wpsgl-form-group textarea:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+.wpsgl-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.wpsgl-form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Mensagens */
+.wpsgl-notice {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.wpsgl-notice.success {
+    background-color: #f0f9f0;
+    border-left-color: #46b450;
+    color: #1e4620;
+}
+
+.wpsgl-notice.error {
+    background-color: #fcf0f1;
+    border-left-color: #dc3232;
+    color: #761919;
+}
+
+.wpsgl-notice.warning {
+    background-color: #fef8ee;
+    border-left-color: #ffb900;
+    color: #735c0f;
+}
+
+/* Botões personalizados */
+.wpsgl-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wpsgl-btn-primary {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+.wpsgl-btn-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+    color: #fff;
+}
+
+.wpsgl-btn-secondary {
+    background: #f8f9fa;
+    color: #23282d;
+    border-color: #ddd;
+}
+
+.wpsgl-btn-secondary:hover {
+    background: #e9ecef;
+    border-color: #ccc;
+}
+
+.wpsgl-btn-danger {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+.wpsgl-btn-danger:hover {
+    background: #bd2130;
+    border-color: #bd2130;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .wpsgl-cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpsgl-filter-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpsgl-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpsgl-stats-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animações */
+@keyframes wpsgl-fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wpsgl-card,
+.wpsgl-filters,
+.wpsgl-stat-card {
+    animation: wpsgl-fade-in 0.3s ease-out;
+}
+
+/* Tooltips */
+.wpsgl-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.wpsgl-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
