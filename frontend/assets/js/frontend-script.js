@@ -59,8 +59,7 @@
                 method: 'POST',
                 data: {
                     action: 'wpsgl_search_products_frontend',
-                    term: searchTerm,
-                    debug: (wpsgl_frontend && wpsgl_frontend.is_admin_user) ? 1 : 0
+                    term: searchTerm
                 },
                 cache: false,
                 success: function(response) {
@@ -82,9 +81,6 @@
 
                     var list = response.results || [];
                     var meta = response.meta || { local_count: 0, api_count: 0 };
-
-                    // wpsgl-debug: mostrar resultado da busca no console (temporário)
-                    try { console.log('wpsgl-debug: searchProducts response', { list: list, meta: meta, term: searchTerm }); } catch (e) {}
 
                     if (list.length === 0) {
                         setSearchStatus('Nenhum produto cadastrado para esta busca.', 'warning');
@@ -132,48 +128,9 @@
                         msg += ' Código: ' + code;
                     }
 
-                    // Construir dados de debug (temporário) para ajudar no diagnóstico
-                    var debugData = {
-                        url: wpsgl.ajax_url + '?action=wpsgl_search_products_frontend&term=' + encodeURIComponent(searchTerm),
-                        status: code,
-                        statusText: jqXHR && jqXHR.statusText ? jqXHR.statusText : textStatus,
-                        errorThrown: errorThrown || '',
-                        responseText: jqXHR && jqXHR.responseText ? jqXHR.responseText : '',
-                        headers: (jqXHR && typeof jqXHR.getAllResponseHeaders === 'function') ? jqXHR.getAllResponseHeaders() : ''
-                    };
-
-                    // Logar no console (privado / temporário)
-                    try { console.error('wpsgl-debug: search error', debugData); } catch (e) {}
-
                     // Exibir mensagem amigável e painel de detalhes copiável
                     setSearchStatus(msg, 'warning');
                     $results.hide();
-
-                    var $debug = $('#wpsgl-search-debug');
-                    if (!$debug.length) {
-                        $debug = $('<div id="wpsgl-search-debug" style="background:#fff;border:1px solid #e6e6e6;padding:10px;margin-top:8px;border-radius:6px;">' +
-                            '<div style="display:flex; gap:8px; align-items:center;"><strong>Detalhes da requisição</strong><button type="button" id="wpsgl-search-debug-copy" class="button">Copiar detalhes</button></div>' +
-                            '<pre style="white-space:pre-wrap;margin-top:8px;max-height:240px;overflow:auto;">' + JSON.stringify(debugData, null, 2) + '</pre>' +
-                        '</div>');
-                        $status.after($debug);
-
-                        // Copiar para clipboard
-                        $(document).on('click', '#wpsgl-search-debug-copy', function() {
-                            var text = JSON.stringify(debugData, null, 2);
-                            if (navigator.clipboard && navigator.clipboard.writeText) {
-                                navigator.clipboard.writeText(text).then(function() {
-                                    alert('Detalhes copiados para a área de transferência.');
-                                });
-                            } else {
-                                // fallback
-                                var $tmp = $('<textarea>').val(text).appendTo('body').select();
-                                try { document.execCommand('copy'); alert('Detalhes copiados para a área de transferência.'); } catch (e) { alert('Não foi possível copiar automaticamente. Por favor selecione e copie manualmente.'); }
-                                $tmp.remove();
-                            }
-                        });
-                    } else {
-                        $debug.find('pre').text(JSON.stringify(debugData, null, 2));
-                    }
                 },
 
                 complete: function() {
@@ -186,9 +143,6 @@
 
         
         function selectProduct(product) {
-            // wpsgl-debug: selectProduct foi chamado (temporário)
-            try { console.log('wpsgl-debug: selectProduct called', product); } catch (e) {}
-
             if (product.id == 0) {
                 // Produto da API (Novo)
                 $('#product_id').val(''); // Garante que é tratado como novo
