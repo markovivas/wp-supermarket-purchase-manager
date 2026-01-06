@@ -199,7 +199,7 @@ class WPSGL_Utils {
      */
     public static function log_error($message, $data = null) {
         if (WP_DEBUG === true) {
-            $log_message = '[' . date('Y-m-d H:i:s') . '] WP Supermarket Manager: ' . $message;
+            $log_message = '[' . date('Y-m-d H:i:s') . '] WP Supermercado: ' . $message;
             
             if ($data) {
                 $log_message .= ' Data: ' . print_r($data, true);

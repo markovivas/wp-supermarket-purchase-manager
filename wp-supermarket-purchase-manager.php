@@ -1,10 +1,11 @@
 <?php
 /**
- * Plugin Name: WP Supermarket Purchase Manager
- * Plugin URI: https://seusite.com/
+ * Plugin Name: WP Supermercado
+ * Plugin URI: https://marcovivas.com/
  * Description: Sistema de controle de compras de supermercado/loja
  * Version: 1.0.0
- * Author: Seu Nome
+ * Author: Marco Antonio Vivas
+ * Author URI: https://marcovivas.com/
  * License: GPL v2 or later
  * Text Domain: wpsgl
  * Requires PHP: 8.0

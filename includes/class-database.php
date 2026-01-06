@@ -173,6 +173,14 @@ class WPSGL_Database {
         );
     }
     
+    public function delete_purchase($id) {
+        return $this->wpdb->delete(
+            $this->prefix . 'purchases',
+            array('id' => intval($id)),
+            array('%d')
+        );
+    }
+    
     public function get_purchases_report($filters = array()) {
         $defaults = array(
             'start_date' => date('Y-m-01'),
@@ -217,6 +225,7 @@ class WPSGL_Database {
         $query = $this->wpdb->prepare(
             "SELECT pu.*, 
                     pr.name as product_name,
+                    pr.barcode as barcode,
                     c.name as category_name,
                     s.name as store_name
              FROM {$this->prefix}purchases pu
@@ -352,6 +361,7 @@ class WPSGL_Database {
             'Data',
             'Hora',
             'Produto',
+            'Código de Barras',
             'Categoria',
             'Quantidade',
             'Unidade',
@@ -367,6 +377,7 @@ class WPSGL_Database {
                 $purchase->purchase_date,
                 $purchase->purchase_time,
                 $purchase->product_name,
+                $purchase->barcode,
                 $purchase->category_name,
                 $purchase->quantity,
                 $purchase->unit,
