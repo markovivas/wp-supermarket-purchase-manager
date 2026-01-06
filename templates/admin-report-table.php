@@ -200,14 +200,6 @@ $pagination = isset($data['pagination']) ? $data['pagination'] : '';
                                                 <i class="dashicons dashicons-edit"></i>
                                             </a>
                                         </span>
-                                        <span class="delete">
-                                            <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('action' => 'delete', 'id' => $purchase->id)), 'delete_purchase_' . $purchase->id)); ?>" 
-                                               class="delete-purchase" 
-                                               title="<?php esc_attr_e('Excluir compra', 'wpsgl'); ?>"
-                                               onclick="return confirm('<?php esc_attr_e('Tem certeza que deseja excluir esta compra?', 'wpsgl'); ?>');">
-                                                <i class="dashicons dashicons-trash"></i>
-                                            </a>
-                                        </span>
                                     </div>
                                 </td>
                             </tr>

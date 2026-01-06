@@ -199,16 +199,6 @@ class WPSGL_Reports_Page {
                                                     <?php _e('Editar', 'wpsgl'); ?>
                                                 </a>
                                             </span>
-                                            <span class="delete">
-                                                <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'wpsgl-reports', 'action' => 'delete_purchase', 'id' => intval($purchase->id)), admin_url('admin.php')), 'delete_purchase_' . intval($purchase->id))); ?>" class="button button-small button-link-delete" onclick="return confirm('<?php esc_attr_e('Tem certeza que deseja excluir esta compra?', 'wpsgl'); ?>');">
-                                                    <?php _e('Excluir compra', 'wpsgl'); ?>
-                                                </a>
-                                            </span>
-                                            <span class="delete">
-                                                <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'wpsgl-products', 'action' => 'delete', 'id' => intval($purchase->product_id)), admin_url('admin.php')), 'delete_product_' . intval($purchase->product_id))); ?>" class="button button-small button-link-delete" onclick="return confirm('<?php esc_attr_e('Tem certeza que deseja excluir este produto?', 'wpsgl'); ?>');">
-                                                    <?php _e('Excluir', 'wpsgl'); ?>
-                                                </a>
-                                            </span>
                                         </div>
                                     </td>
                                 </tr>
