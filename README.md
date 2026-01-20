@@ -1,4 +1,4 @@
-# WP Supermarket Purchase Manager
+# Controle de Supermercado
 
 Sistema de controle de compras de supermercado/loja para WordPress. Permite cadastrar produtos, registrar compras, buscar por código de barras (EAN) com integração à Open Food Facts, e importar/exportar dados em CSV.
 
